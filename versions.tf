@@ -4,7 +4,7 @@ terraform {
   required_providers {
     vault = ">= 3.24.0"
     bitbucket = {
-      source  = "zahiar/bitbucket"
+      source = "zahiar/bitbucket"
     }
   }
 }

@@ -2,13 +2,13 @@
 variable "bitbucket_workspace_name" {
   description = "The name of the Bitbucket workspace"
   type        = string
-  default = "yuleitest"
+  default     = "yuleitest"
 }
 
 variable "bitbucket_repository_name" {
   description = "The name of the Bitbucket repository"
   type        = string
-  default = "oidc-vault-test"
+  default     = "oidc-vault-test"
 }
 
 # variable "bitbucket_username" {
@@ -25,15 +25,15 @@ variable "bitbucket_repository_name" {
 # }
 
 variable "vault_address" {
-    // Vault address is not sensitive data, it can be stored in terraform statefile in plaintext, without leaking any secrets.
+  // Vault address is not sensitive data, it can be stored in terraform statefile in plaintext, without leaking any secrets.
   description = "The address of the Vault server"
   type        = string
-  default = "https://vault-cluster-public-vault-bb7b95a8.c950b5f7.z1.hashicorp.cloud:8200/"
+  default     = "https://vault-cluster-public-vault-bb7b95a8.c950b5f7.z1.hashicorp.cloud:8200/"
 }
 
 variable "vault_namespace" {
-    // Vault namespace is not sensitive data, it can be stored in terraform statefile in plaintext, without leaking any secrets.
+  // Vault namespace is not sensitive data, it can be stored in terraform statefile in plaintext, without leaking any secrets.
   description = "The namespace of the Vault server"
   type        = string
-  default = "admin"
+  default     = "admin"
 }
