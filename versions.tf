@@ -5,7 +5,6 @@ terraform {
     vault = ">= 3.24.0"
     bitbucket = {
       source  = "zahiar/bitbucket"
-      
     }
   }
 }

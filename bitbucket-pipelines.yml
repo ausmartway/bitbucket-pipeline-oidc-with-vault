@@ -1,0 +1,18 @@
+# Template for using OIDC with Vault in Bitbucket Pipelines
+# This template is from https://github.com/ausmartway/bitbucket-pipeline-oidc-with-vault, you should review the steps required to setup the OIDC integration with Vault and Bitbucket Pipelines.
+# This template is provided as is, without any warranty or support. Use at your own risk.
+
+image: hashicorp/vault
+
+pipelines:
+  branches:
+    main:
+        - step:
+            oidc: true
+            name: Login into Vault using OIDC and get secrets
+            trigger: automatic
+            script:
+              - echo "AUthenticate with Vault."
+              - export VAULT_TOKEN=$(vault write -namespace="$VAULT_NAMESPACE" -field=token auth/bitbucket-oidc-for-workspace-"$BITBUCKET_WORKSPACE"/login role="bitbucket-oidc-$BITBUCKET_WORKSPACE-$BITBUCKET_REPO_SLUG" jwt="$BITBUCKET_STEP_OIDC_TOKEN")
+              - echo "getting secrets from Vault."
+              - vault kv get -mount=kv-for-bitbucket-workspace-"$BITBUCKET_WORKSPACE" bitbucket-secret-for-repo-"$BITBUCKET_REPO_SLUG"
