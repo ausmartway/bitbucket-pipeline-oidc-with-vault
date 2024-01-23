@@ -26,6 +26,8 @@ terraform apply -auto-approve
 
 The workspace is onboarded into hcp vault as a jwt auth method, which can be used by all repositories under the same workspace. The repository is onboarded into hcp vault as a jwt auth role. Vault access details are added as repository variables. An example bitbucket pipeline file has been provided. The pipeline would login to vault and print the secrets from vault.
 
+![Bitbucket Pipeline OIDC JWT Integration with Vault](./diagrams/bitbucket-pipeline-oidc-jwt-integration-with-vault.png)
+
 ## Cleanup
 
 ```bash
