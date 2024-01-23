@@ -45,14 +45,6 @@ resource "bitbucket_pipeline_variable" "vault_namespace" {
   secured    = false
 }
 
-resource "bitbucket_pipeline_variable" "vault_auth_path" {
-  workspace  = var.bitbucket_workspace_name
-  repository = var.bitbucket_repository_name
-  key        = "VAULT_AUTH_PATH"
-  value      = "auth/bitbucket-oidc-for-workspace-${var.bitbucket_workspace_name}/login"
-  secured    = false
-}
-
 # Create a KV secrets engine
 resource "vault_mount" "bitbucket" {
   path        = "kv-for-bitbucket-workspace-${var.bitbucket_workspace_name}"
@@ -68,7 +60,7 @@ resource "vault_kv_secret_v2" "bitbucket" {
   name  = "bitbucket-secret-for-repo-${var.bitbucket_repository_name}"
   data_json = jsonencode(
     {
-      DemoKey = "OIDC auth demo for bitbucket pipeline of repository ${var.bitbucket_workspace_name}/${var.bitbucket_repository_name}",
+      DemoKey = "secrets for repository ${var.bitbucket_workspace_name}/${var.bitbucket_repository_name}",
       DemoSecret  = "t0pSecrets that can be used by the pipeline"
     }
   )
