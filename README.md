@@ -4,6 +4,8 @@ Bitbucket Pipeline need some secrets in both CI and CD phase. These secrets can 
 
 This is a sample project to demonstrate how Bitbucket Cloud pipelines can use it's native OIDC token to log into HCP Vault and get secrets.
 
+You can see this in action at this [Bitbucket Cloud repository](https://bitbucket.org/yuleitest/oidc-vault-test/pipelines/results/page/1).
+
 This is samilar with [Using OIDC with HashiCorp Vault and Github Actions](https://www.hashicorp.com/resources/using-oidc-with-hashicorp-vault-and-github-actions)
 
 ## Prerequisites
@@ -37,4 +39,3 @@ The workspace is onboarded into hcp vault as a jwt auth method, which can be use
 ```bash
 terraform destroy -auto-approve
 ```
-
