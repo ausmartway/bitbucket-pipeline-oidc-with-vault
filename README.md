@@ -16,7 +16,7 @@ A Bitbucket Cloud account is required. This can be a free or paid account.
 
 ## Setup
 
-Create a [Bitbucket Cloud app password](https://support.atlassian.com/Bitbucket-cloud/docs/create-an-app-password/). This will be used to authenticate to Bitbucket Cloud. Export the values into Bitbucket_USERNAME and Bitbucket_PASSWORD environment variables.
+Create a [Bitbucket Cloud app password](https://support.atlassian.com/Bitbucket-cloud/docs/create-an-app-password/). This will be used by terraform to authenticate to Bitbucket Cloud and configure reposity variables pointing where Vault is. These variables contains no secrets. Export the values into Bitbucket_USERNAME and Bitbucket_PASSWORD environment variables.
 
 Create a HCP Vault admin [token](https://learn.hashicorp.com/tutorials/vault/getting-started-token?in=vault/getting-started). Export the value into VAULT_TOKEN environment variable. Also setup VAULT_ADDR and VAULT_NAMESPACE environment variables.
 
