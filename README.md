@@ -1,8 +1,10 @@
 # Bitbucket cloud OIDC into HCP Vault
 
-Bitbucket Pipeline need some secrets to in both CI and CD phase. These secrets can be stored in Bitbucket as variables, however, secrets spreaded in repositories are hard to manage. HashiCorp Vault is a popular secrects management platform that can manage lifecycle of many types of secrets. Bitbucket Cloud can use it's native OIDC token to login to Vault and get secrets without having to provide a credential to connect. THis eliminates the need to store any secrets in Bitbucket Cloud.
+Bitbucket Pipeline need some secrets in both CI and CD phase. These secrets can be stored in Bitbucket as variables, however, secrets spreaded in repositories are hard to manage. HashiCorp Vault is a popular secrects management platform that can manage the lifecycle of many types of secrets. Bitbucket Cloud can use it's native OIDC token to login to Vault and get secrets without having to provide a credential to connect. This eliminates the need to store any secrets in Bitbucket Cloud.
 
 This is a sample project to demonstrate how Bitbucket Cloud pipelines can use it's native OIDC token to log into HCP Vault and get secrets.
+
+This is samilar with [Using OIDC with HashiCorp Vault and Github Actions](https://www.hashicorp.com/resources/using-oidc-with-hashicorp-vault-and-github-actions)
 
 ## Prerequisites
 
